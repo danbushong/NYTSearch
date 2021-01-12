@@ -1,7 +1,7 @@
 
 
     
-$("#search-button").on("click", function() {
+$("#search-button").on("click", function(response) {
 
  
 
@@ -12,5 +12,10 @@ $("#search-button").on("click", function() {
     $.ajax({
     url: queryURL,
     method: "GET"
-})});
+})
+var searchInput = $("#search-term-input").val();
+var recordsInput = $("#number-records-select").val();
+var startYear = $("#start-year-input").val();
+var endYear = $("#end-year-input").val();
+});
 
