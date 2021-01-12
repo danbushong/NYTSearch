@@ -3,9 +3,9 @@ function renderArticles(response) {
 }
 
 function getSearchParameters() {
-  var term = $("#search-term-input").value();
-  var startYear= $("#start-year-input");
-  var endYear = $("end-year-input");
+  var term = $("#search-term-input").value;
+  var startYear= $("#start-year-input").value;
+  var endYear = $("end-year-input").value;
   
   var searchParameters = {"term": term,"startYear":startYear,"endYear":endYear}
   return searchParameters; 
@@ -19,6 +19,10 @@ function validateInput(searchParameters) {
 }
 
 function clearSearchParameters() {
+  $("#search-term-input").val("");
+  $("#start-year-input").val("");
+  $("end-year-input").val("");
+
   
 }
 
