@@ -1,8 +1,16 @@
 function renderArticles(response) {
-
+  var recordsNumber= $("#number-records-select").value();
 }
 
 function getSearchParameters() {
+  var term = $("#search-term-input").value();
+  var startYear= $("#start-year-input");
+  var endYear = $("end-year-input");
+  
+  var searchParameters = {"term": term,"startyear":startYear,"endYear":endYear}
+  return searchParameters; 
+
+ 
 
 }
 
