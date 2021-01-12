@@ -7,7 +7,7 @@ function getSearchParameters() {
   var startYear= $("#start-year-input");
   var endYear = $("end-year-input");
   
-  var searchParameters = {"term": term,"startyear":startYear,"endYear":endYear}
+  var searchParameters = {"term": term,"startYear":startYear,"endYear":endYear}
   return searchParameters; 
 
  
