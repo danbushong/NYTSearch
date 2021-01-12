@@ -14,6 +14,7 @@ function renderArticles(response) {
 
   for (i = 0;  i > $("option").val(i); i++)
   $("#results").append("<h1>",articleHeadline + "<a>",articleURL);
+
 }
 
 function getSearchParameters() {
@@ -78,6 +79,18 @@ function clearResults() {
 
 }
 
+function getSearchParameters() {
+  var term = $("#search-term-input").value();
+  var term = $("#search-term-input").value();
+  var startYear= $("#start-year-input").value();
+  var endYear = $("end-year-input").value();
+
+  
+  var searchParameters = {"term": term,"startYear":startYear,"endYear":endYear}
+  return searchParameters; 
+
+}
+
 function clearSearchParameters() {
   $("#search-term-input").val("");
   $("#start-year-input").val("");
@@ -87,12 +100,9 @@ function clearSearchParameters() {
 $(document).ready(function() {
   $("#search-button").on("click", function(event) {
     event.preventDefault();
-
     var searchParameters = getSearchParameters();
-
     if (!validateInput(searchParameters)) 
       return;
-
     const API_KEY = "k82A50CismIhAy2OT09WqCskA56GPHry";
     var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=" + searchParameters.term + "&api-key=" + API_KEY;
   
